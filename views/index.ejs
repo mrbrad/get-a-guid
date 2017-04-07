@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GUID Generator">
+<meta name="keywords" content="GUID, GUID Generator, Create GUID" />
+<meta name="author" content="brad">
+
+<!-- favicon -->
+<link rel="icon" href="images/favicon.png">
+
+<!-- page title -->
+<title>get-a-GUID</title>
+
+<!-- bootstrap css -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- css -->
+<link href="css/style.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
+<link href="css/overrides.css" rel="stylesheet">
+<link href="css/toastr.css" rel="stylesheet"/>
+
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='fonts/FontAwesome.otf' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/linear-icons.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+
+<div id="top" data-toggle="top"></div>
+
+<!-- header -->
+<header id="header-5" class="dark-header">
+    <div class="container">
+        <!-- navbar-1 inverse -->
+        <nav class="navbar-1 navbar navbar-default nav-w-top-space rounded">
+            <div class="container-fluid navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="text-default navbar-brand" href="#">
+                  get-a-<span class="text-primary">GUID</span>.com
+                </a>
+            </div><!-- / navbar-header -->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                      <label class="btn btn-info-filled-nav">
+                        <a href="javascript:void(0)" data-toggle="modal"
+                          data-target="#checkOutTheAPI">Check out the API</a>
+                      </label>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav><!-- / navbar-1 inverse -->
+        <div class="header-content">
+            <div class="row">
+               <div class="col-sm-6">
+                    <!-- contact form 1 -->
+                    <div id="contact-form-1">
+                        <h3 class="log-title">GUID Generator</h3>
+                        <form id="contactForm" action="/" method="post" data-toggle="validator">
+
+                          <button type="submit" id="form-submit" class="btn btn-lg btn-primary-filled btn-form-submit">
+                            Generate some GUIDs
+                          </button>
+
+                          <div id="msgSubmit" class="h3 text-center hidden"></div>
+                          <div class="clearfix"></div>
+
+                          <br />
+
+                          <div class="form-group">
+
+                            <div class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-default active">
+                                <input type="radio" name="count" value="1" checked="">1 GUID
+                              </label>
+                              <label class="btn btn-default">
+                                <input type="radio" name="count" value="5">5 GUIDs
+                              </label>
+                              <label class="btn btn-default">
+                                <input type="radio" name="count" value="10">10 GUIDs
+                              </label>
+                            </div>
+                          </div>
+
+                          <br />
+
+                          <div class="input-group" style="width:100%">
+                            <label class="control-label input-group">Below is your result:</label>
+
+                            <textarea id="result" readonly type="text" class="form-control"><%= result %></textarea>
+                          </div>
+
+                          <button id="copyToClipboard" data-clipboard-target="#result" class="btn btn-md btn-default-filled btn-form-submit"
+                              data-toggle="tooltip" data-placement="top" title="copy to clipboard" type="button">
+                              <i class="fa fa-copy"></i>
+                              Copy To Clipboard
+                          </button>
+
+                        </form>
+                    </div><!-- / contact form 1 -->
+                </div><!-- / col-sm-6 -->
+                <div class="col-sm-6 header-content-details">
+                    <h3 class="header-brand">What is a <span class="text-primary">GUID</span>? </h3>
+
+                    <p> A universally unique identifier (UUID) is a 128-bit number used to identify information in computer
+                        systems. The term globally unique identifier (GUID) is also used.
+                    </p>
+
+                    <p>When generated according to the standard methods, UUIDs are for practical purposes unique, without
+                       depending for their uniqueness on a central registration authority or coordination between the parties
+                       generating them, unlike most other numbering schemes. While the probability that a UUID will be
+                       duplicated is not zero, it is so close to zero as to be negligible.
+                    </p>
+
+                    <p>Thus, anyone can create a UUID and use it to identify something with near certainty that the identifier
+                       does not duplicate one that has already been, or will be, created to identify something else. Information
+                       labeled with UUIDs by independent parties can therefore be later combined into a single database,
+                       or transmitted on the same..<a href="https://en.wikipedia.org/wiki/Julian_calendar">read more</a>
+                    </p>
+
+                </div><!-- / col-sm-6 -->
+            </div><!-- / row -->
+        </div><!-- / header-content -->
+
+        <footer class="dark-footer">
+          <p class="footer-info">© 2017 - <strong>get-a-GUID.com</strong> - GUID Generator
+            <span class="pull-right">
+              <a href="javascript:void(0)" data-toggle="modal" data-target="#termsOfUse" class="text-muted">Terms of Use</a>
+            </span>
+          </p>
+        </footer>
+
+    </div><!-- / container -->
+</header>
+<!-- / header -->
+
+<!-- terms of use -->
+<!-- Modal -->
+<div class="modal fade" id="termsOfUse" tabindex="-1" role="dialog" aria-labelledby="ModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="ModalLabel">Terms of Use</h4>
+      </div>
+      <div class="modal-body">THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+        NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+        LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+        OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+        WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger-filled" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- --->
+
+<!-- API modal -->
+<!-- Modal -->
+<div class="modal fade modal-form" id="checkOutTheAPI" tabindex="-1" role="dialog" aria-labelledby="ModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="ModalLabel">API</h4>
+      </div>
+      <div class="modal-body">
+        <h5>Get GUID API</h5>
+        <p class="input-group">
+            <input type="text" value="/api/get?count=1" class="form-control" />
+
+            <span class="input-group-btn">
+              <a target="_blank" href="/api/get?count=1">
+                <button type="button" class="btn btn-md btn-warning-filled">Test</button>
+              </a>
+            </span>
+        </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info-filled" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- --->
+
+
+
+<!-- javascript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+
+<!-- scrolling nav -->
+<script src="js/scrolling-nav.js"></script>
+<!-- / scrolling nav -->
+
+<!-- hide nav -->
+<script src="js/hide-nav.js"></script>
+<!-- / hide nav -->
+
+<!-- toast messages -->
+<script src="js/toastr.min.js"></script>
+
+<!-- clipboard -->
+<script src="js/clipboard.min.js"></script>
+
+<script>
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+
+  var clipboard = new Clipboard('#copyToClipboard');
+
+  clipboard.on('success', function(e) {
+
+      if (e == undefined || e.text == undefined || e.text == "")
+        return;
+
+      toastr.info('Your GUIDs have been copied to your clipboard!');
+      e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+      toastr.error('Something went wrong and we could not access the clipboard.');
+  });
+
+</script>
+
+<!-- / javascript -->
+</body>
+
+</html>
