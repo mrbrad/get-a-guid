@@ -35,7 +35,7 @@ app.post("/", function (req, res) {
   // get the count for how many GUIDs to create
   let count = req.body.count == undefined ?
               1 : req.body.count;
-              
+
   res.render("index", {
     count: count,
     result:getGUIDs(count).join("\n")
@@ -60,4 +60,4 @@ var getGUIDs = function (count) {
 
 
 // start server
-http.createServer(app).listen(8081);
+http.createServer(app).listen(8080);
